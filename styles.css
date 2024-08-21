@@ -52,7 +52,8 @@ body {
 }
 
 #start-button {
-    padding: 10px 20px;
+    padding: 20px 30px;
+    margin: 20px;
     font-size: 16px;
     background-color: #28a745;
     color: white;
@@ -63,6 +64,21 @@ body {
 
 #start-button:hover {
     background-color: #218838;
+}
+
+#nav-button {
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #5279aa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#nav-button:hover {
+    background-color: #385478;
 }
 
 .hidden {
