@@ -14,6 +14,10 @@ function init() {
         workoutOptions.appendChild(button);
     });
 
+    document.addEventListener('DOMContentLoaded', (event) => {
+        loadState();
+    });
+
     document.addEventListener('keydown', function(event) {
         if (event.code === 'Space') {
             if (isTimerRunning) {
@@ -23,6 +27,37 @@ function init() {
             }
         }
     });
+}
+
+function saveState() {
+    const state = {
+        currentWorkoutId: currentWorkout ? currentWorkout.id : null,
+        currentStep: currentStep,
+        timeLeft: timeLeft,
+        isTimerRunning: isTimerRunning
+    };
+    localStorage.setItem('workoutState', JSON.stringify(state));
+}
+
+function loadState() {
+    const state = JSON.parse(localStorage.getItem('workoutState'));
+    if (state) {
+        currentWorkout = workouts.find(workout => workout.id === state.currentWorkoutId);
+        currentStep = state.currentStep;
+        timeLeft = state.timeLeft;
+        isTimerRunning = state.isTimerRunning;
+
+        if (currentWorkout) {
+            document.getElementById("main-title").classList.add("hidden");
+            document.getElementById("workout-options").classList.add("hidden");
+            document.getElementById("workout-container").classList.remove("hidden");
+            document.getElementById("workout-name").innerText = currentWorkout.name;
+            showStep();
+            if (isTimerRunning) {
+                startTimer();
+            }
+        }
+    }
 }
 
 function selectWorkout(workoutId) {
@@ -43,6 +78,7 @@ function showStep() {
     document.getElementById("step-name").innerText = `${step.name} (${currentStep+1}/${currentWorkout.steps.length})`;
     document.getElementById("step-description").innerText = step.description;
     document.getElementById("timer").innerText = formatTime(step.duration);
+    saveState();
 }
 
 function ding() {
@@ -60,8 +96,8 @@ function nextStep() {
         showStep();
         ding();
     } else {
-        alert("Workout Complete!");
         ding();
+        alert("Workout Complete!");
         resetWorkout();
     }
 }
@@ -81,7 +117,7 @@ function previousStep() {
 }
 
 function startTimer() {
-    if (isTimerRunning) return; // Prevent starting a new timer if already running
+    if (isTimerRunning) return;
 
     const step = currentWorkout.steps[currentStep];
     if (timeLeft <= 0) {
@@ -115,7 +151,7 @@ function pauseTimer() {
 }
 
 function resumeTimer() {
-    if (isTimerRunning) return; // Prevent resuming if already running
+    if (isTimerRunning) return;
 
     startTimer();
 }
@@ -132,6 +168,7 @@ function resetWorkout() {
     document.getElementById("main-title").classList.remove("hidden");
     document.getElementById("workout-options").classList.remove("hidden");
     document.getElementById("workout-container").classList.add("hidden");
+    localStorage.removeItem('workoutState');
 }
 
 function formatTime(seconds) {
