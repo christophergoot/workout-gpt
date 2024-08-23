@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workout Timer</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1 id="main-title">Choose Your Workout</h1>
-        <div id="workout-options">
+      <div id="header" class="hidden">
+        <div id="workout-header">
+          <h1 id="workout-name"></h1>
+          <button id="end-button" onclick="resetWorkout()">End Workout</button>
+        </div>
+      </div>
+      <div id="main">
+        <div id="workout-selection">
+          <h1 id="main-title">Choose Your Workout</h1>
+          <div id="workout-options">
             <!-- Workout buttons will be dynamically inserted here -->
+          </div>
         </div>
         <div id="workout-container" class="hidden">
-            <div id="workout-header">
-                <h1 id="workout-name"></h1>
-                <button id="end-button" onclick="endWorkout()">End Workout</button>
-            </div>
-            <div id="step-info">
-                <h2 id="step-name"></h2>
-                <p id="step-description"></p>
-            </div>
-            <div id="timer-controls">
-                <span id="timer">00:00</span>
-                <button id="start-button" onclick="startTimer()">Start</button>
-                <button id="nav-button" onclick="previousStep()"><</button>
-                <button id="nav-button" onclick="nextStep()">></button>
-            </div>
+          <div id="step-info">
+            <h2 id="step-name"></h2>
+            <p id="step-description"></p>
+          </div>
         </div>
+      </div>
+      <div id="footer" class="hidden">
+        <div id="timer-controls">
+          <span id="timer">00:00</span>
+          <button id="start-button" onclick="startTimer()">Start</button>
+          <button id="nav-button" onclick="previousStep()"><</button>
+          <button id="nav-button" onclick="nextStep()">></button>
+        </div>
+      </div>
     </div>
 
     <script src="workouts.js"></script>
     <script src="scripts.js"></script>
-</body>
+  </body>
 </html>

@@ -3,7 +3,8 @@ let currentStep = 0;
 let timerInterval;
 let timeLeft = 0;
 let isTimerRunning = false;
-const dingSound = new Audio('ding.mp3');
+const bellSound = new Audio('./sounds/bell.mp3');
+const boxingBellSound = new Audio('./sounds/boxing-bell.mp3');
 
 function init() {
     const workoutOptions = document.getElementById('workout-options');
@@ -49,9 +50,11 @@ function loadState() {
 
         if (currentWorkout) {
             document.getElementById("main-title").classList.add("hidden");
-            document.getElementById("workout-options").classList.add("hidden");
+            document.getElementById("workout-selection").classList.add("hidden");
             document.getElementById("workout-container").classList.remove("hidden");
             document.getElementById("workout-name").innerText = currentWorkout.name;
+            document.getElementById("header").classList.remove("hidden");
+            document.getElementById("footer").classList.remove("hidden");
             showStep();
             if (isTimerRunning) {
                 startTimer();
@@ -64,9 +67,10 @@ function selectWorkout(workoutId) {
     currentWorkout = workouts.find(workout => workout.id === workoutId);
     currentStep = 0;
     
-    document.getElementById("main-title").classList.add("hidden");
-    document.getElementById("workout-options").classList.add("hidden");
+    document.getElementById("workout-selection").classList.add("hidden");
     document.getElementById("workout-container").classList.remove("hidden");
+    document.getElementById("header").classList.remove("hidden");
+    document.getElementById("footer").classList.remove("hidden");
     
     document.getElementById("workout-name").innerText = currentWorkout.name;
     
@@ -82,8 +86,8 @@ function showStep() {
 }
 
 function ding() {
-    dingSound.currentTime = 0;
-    dingSound.play();
+    bellSound.currentTime = 0;
+    bellSound.play();
 }
 
 function nextStep() {
@@ -96,9 +100,7 @@ function nextStep() {
         showStep();
         ding();
     } else {
-        ding();
-        alert("Workout Complete!");
-        resetWorkout();
+        endWorkout();
     }
 }
 
@@ -112,7 +114,7 @@ function previousStep() {
         ding();
         showStep();
     } else {
-        endWorkout();
+        resetWorkout();
     }
 }
 
@@ -157,6 +159,8 @@ function resumeTimer() {
 }
 
 function endWorkout() {
+    boxingBellSound.play();
+    alert("Workout Complete!");
     resetWorkout();
 }
 
@@ -165,9 +169,10 @@ function resetWorkout() {
     timeLeft = 0;
     clearInterval(timerInterval);
     isTimerRunning = false;
-    document.getElementById("main-title").classList.remove("hidden");
-    document.getElementById("workout-options").classList.remove("hidden");
+    document.getElementById("workout-selection").classList.remove("hidden");
     document.getElementById("workout-container").classList.add("hidden");
+    document.getElementById("header").classList.add("hidden");
+    document.getElementById("footer").classList.add("hidden");
     localStorage.removeItem('workoutState');
 }
 

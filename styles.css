@@ -1,108 +1,150 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
 }
 
 .container {
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#header {
+  flex: 0 0 25%; /* Top quarter */
+  align-items: center;
+}
+
+#header.hidden {
+  display: none;
+}
+
+#main {
+  flex: 1; /* Remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer {
+  flex: 0 0 25%; /* Bottom quarter */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer.hidden {
+  display: none;
+}
+
+#workout-selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#workout-selection.hidden {
+  display: none;
 }
 
 #workout-options button {
-    margin: 10px;
-    padding: 15px 30px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #workout-options button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 #workout-container.hidden {
-    display: none;
+  display: none;
 }
 
 #workout-container {
-    text-align: center; /* Center-aligns workout container content */ 
-    margin-top: 20px;
+  text-align: center; /* Center-aligns workout container content */
+  margin-top: 20px;
 }
 
 #step-info {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 #timer-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #timer {
-    font-size: 48px;
-    margin-right: 20px;
+  font-size: 48px;
+  margin-right: 20px;
 }
 
 #start-button {
-    padding: 20px 30px;
-    margin: 20px;
-    font-size: 16px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 20px 30px;
+  margin: 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #start-button:hover {
-    background-color: #218838;
+  background-color: #218838;
 }
 
 #nav-button {
-    margin: 10px;
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #5279aa;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #5279aa;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #nav-button:hover {
-    background-color: #385478;
-}
-
-.hidden {
-    display: none;
+  background-color: #385478;
 }
 
 #workout-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25%; /* Adjust spacing as needed */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25%; /* Adjust spacing as needed */
 }
 
 #workout-name {
-    font-size: 2em; /* Adjust font size as needed */
-    margin: 0;
+  font-size: 2em; /* Adjust font size as needed */
+  margin: 0;
 }
 
 #end-button {
-    font-size: 1em;
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: rgb(125, 125, 125);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+  font-size: 1em;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: rgb(125, 125, 125);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
 }
