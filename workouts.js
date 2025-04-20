@@ -1,286 +1,234 @@
 const workouts = [
 	{
 		id: 1,
-		name: "Cardio Blast",
+		name: "Full-Body Energizer",
 		steps: [
+			// Warm-up (3 min)
 			{
-				name: "High Knees",
+				name: "March in Place (warm up)",
 				duration: 60,
-				description: "Stand in place and run, bringing your knees up towards your chest as high as possible.",
+				description: "Lift knees one at a time while swinging arms naturally.",
 			},
 			{
-				name: "Jumping Jacks",
+				name: "Arm Circles (warm up)",
 				duration: 60,
-				description:
-					"Jump with your legs spreading wide and your arms going overhead, then return to the starting position.",
+				description: "Extend arms to sides and rotate in small circles, forward then backward.",
+			},
+			{
+				name: "Hip Circles (warm up)",
+				duration: 60,
+				description: "Place hands on hips and rotate in big circles in both directions.",
+			},
+
+			// Main (18 min)
+			{
+				name: "Bodyweight Squats",
+				duration: 60,
+				description: "Stand with feet shoulder-width apart, squat down and return to standing.",
+			},
+			{ name: "High Knees", duration: 45, description: "Run in place, lifting your knees as high as possible." },
+			{
+				name: "Push-ups (knee or full)",
+				duration: 45,
+				description: "In plank position, lower chest to floor and push back up.",
+			},
+			{
+				name: "Dumbbell Shoulder Press",
+				duration: 45,
+				description: "Hold dumbbells at shoulders and press them overhead.",
+			},
+			{ name: "Rest", duration: 30, description: "Catch your breath." },
+			{
+				name: "Dumbbell Rows",
+				duration: 45,
+				description: "Hinge forward and pull dumbbells to your sides, squeezing shoulder blades.",
 			},
 			{
 				name: "Mountain Climbers",
+				duration: 45,
+				description: "In plank position, alternate bringing knees toward chest.",
+			},
+			{ name: "Glute Bridge", duration: 60, description: "Lie on back, knees bent, and lift hips toward ceiling." },
+			{ name: "Dumbbell March", duration: 60, description: "Hold dumbbells and march in place with high knees." },
+			{
+				name: "Dead Bug",
 				duration: 60,
-				description: "In a plank position, alternate bringing your knees to your chest as quickly as possible.",
+				description: "On your back, lower opposite arm and leg while keeping core tight.",
 			},
+
+			// Cool down (4 min)
 			{
-				name: "Burpees",
+				name: "Child's Pose (cool down)",
 				duration: 60,
-				description:
-					"Start standing, drop into a squat, kick your feet back into a plank, do a push-up (optional), jump your feet back in, and leap up.",
+				description: "Sit back on heels, stretch arms forward, and breathe.",
 			},
 			{
-				name: "Rest",
-				duration: 30,
-				description: "Take a break or march in place.",
-			},
-			{
-				name: "Butt Kicks",
+				name: "Cat-Cow Stretch (cool down)",
 				duration: 60,
-				description: "Run in place, kicking your heels toward your glutes.",
+				description: "Alternate arching and rounding your back on all fours.",
 			},
 			{
-				name: "Squat Jumps",
+				name: "Seated Spinal Twist (cool down)",
 				duration: 60,
-				description: "Perform a squat, then jump up explosively, landing softly into the next squat.",
+				description: "Twist gently to each side while seated cross-legged.",
 			},
 			{
-				name: "Lateral Shuffles",
+				name: "Forward Fold (cool down)",
 				duration: 60,
-				description: "Shuffle quickly from side to side in a small space, staying low.",
-			},
-			{
-				name: "Rest",
-				duration: 30,
-				description: "Take a break or march in place.",
-			},
-			{
-				name: "Plank to Shoulder Tap",
-				duration: 60,
-				description: "Hold a plank and tap your opposite shoulder with each hand, alternating sides.",
+				description: "Bend at hips and reach for your toes while breathing deeply.",
 			},
 		],
 	},
 	{
 		id: 2,
-		name: "Core and Abs",
+		name: "Core & Cardio Boost",
 		steps: [
+			// Warm-up (3 min)
 			{
-				name: "Plank",
+				name: "Jumping Jacks (warm up)",
 				duration: 60,
-				description: "Hold a plank position with your body straight, engaging your core.",
+				description: "Jump feet apart and raise arms overhead, then return.",
 			},
 			{
-				name: "Bicycle Crunches",
+				name: "Torso Twists (warm up)",
 				duration: 60,
-				description:
-					"Lie on your back and alternate bringing your opposite elbow to your knee, twisting your torso.",
+				description: "Stand with knees soft and twist side to side gently.",
 			},
 			{
-				name: "Leg Raises",
+				name: "Leg Swings (warm up)",
 				duration: 60,
-				description:
-					"Lie on your back and lift your legs up towards the ceiling, then lower them slowly without touching the ground.",
+				description: "Hold onto a wall and swing one leg forward and back.",
 			},
+
+			// Main (18 min)
+			{ name: "Plank Hold", duration: 45, description: "Hold a solid plank position on elbows or hands." },
 			{
-				name: "Russian Twists",
+				name: "Toe Taps",
 				duration: 60,
-				description:
-					"Sit with your knees bent and feet lifted, twist your torso side to side, touching the ground next to your hips.",
+				description: "Lie back and alternate tapping toes to the floor from tabletop legs.",
 			},
+			{ name: "High Knees", duration: 45, description: "Run in place, lifting knees quickly." },
+			{ name: "Bird Dog", duration: 60, description: "On all fours, extend opposite arm and leg, then switch." },
+			{ name: "Rest", duration: 30, description: "Take deep breaths." },
 			{
-				name: "Rest",
-				duration: 30,
-				description: "Take a break or march in place.",
-			},
-			{
-				name: "Flutter Kicks",
+				name: "Dumbbell Side Bends",
 				duration: 60,
-				description: "Lie on your back with legs straight, and alternate small, quick kicks up and down.",
+				description: "Hold a dumbbell in one hand, bend sideways, and return. Switch sides.",
 			},
+			{ name: "Mountain Climbers", duration: 45, description: "Alternate legs quickly in plank position." },
+			{ name: "Crunches", duration: 45, description: "Lie on back, knees bent, lift shoulders off floor, then lower." },
+			{ name: "Dead Bug", duration: 60, description: "Lower opposite arm and leg while keeping your core tight." },
 			{
-				name: "V-Ups",
+				name: "Standing Knee-to-Elbow",
 				duration: 60,
-				description:
-					"Lie on your back, then simultaneously lift your legs and upper body, reaching for your toes.",
+				description: "Bring opposite knee and elbow together while standing, alternating sides.",
 			},
+
+			// Cool down (4 min)
+			{ name: "Child's Pose (cool down)", duration: 60, description: "Stretch arms forward, rest forehead on mat." },
+			{ name: "Cat-Cow Stretch (cool down)", duration: 60, description: "Alternate arching and dipping spine." },
 			{
-				name: "Plank with Hip Dips",
+				name: "Supine Twist (cool down)",
 				duration: 60,
-				description: "Hold a plank on your forearms, dipping your hips from side to side.",
+				description: "Lie on your back, knees to one side, arms stretched out.",
 			},
 			{
-				name: "Rest",
-				duration: 30,
-				description: "Take a break or march in place.",
-			},
-			{
-				name: "Hollow Body Hold",
+				name: "Neck Rolls (cool down)",
 				duration: 60,
-				description:
-					"Lie on your back, lift your shoulders and legs off the ground, holding your body in a curved position.",
+				description: "Gently roll neck in circular motion, switching directions.",
 			},
 		],
 	},
 	{
 		id: 3,
-		name: "Full-Body Strength",
+		name: "Strength Starter",
 		steps: [
+			// Warm-up (3 min)
+			{ name: "March in Place (warm up)", duration: 60, description: "Lift knees one at a time while swinging arms." },
+			{ name: "Arm Circles (warm up)", duration: 60, description: "Circle arms forward and back to loosen shoulders." },
+			{ name: "Air Squats (warm up)", duration: 60, description: "Light squats to get the legs warm." },
+
+			// Main (18 min)
 			{
-				name: "Push-Ups",
+				name: "Dumbbell Goblet Squat",
 				duration: 60,
-				description: "Perform as many push-ups as you can with good form, whether on your toes or knees.",
+				description: "Hold a dumbbell at chest level and perform deep squats.",
 			},
+			{ name: "Dumbbell Shoulder Press", duration: 45, description: "Press dumbbells overhead from shoulder height." },
+			{ name: "Rest", duration: 30, description: "Breathe and shake it out." },
 			{
-				name: "Squats",
+				name: "Dumbbell Deadlift",
 				duration: 60,
-				description: "Stand with feet shoulder-width apart, squat down, and return to standing.",
+				description: "Hinge at hips, keep back straight, lower dumbbells to shin level.",
 			},
+			{ name: "Dumbbell Row", duration: 60, description: "Pull dumbbells toward ribs with elbows tucked in." },
 			{
-				name: "Lunges",
+				name: "Push-ups (knee or full)",
+				duration: 45,
+				description: "Lower chest to floor and push back up with control.",
+			},
+			{ name: "Dumbbell Bicep Curls", duration: 45, description: "Curl dumbbells toward shoulders with elbows fixed." },
+			{ name: "Glute Bridge", duration: 60, description: "Lift hips while squeezing glutes." },
+			{ name: "Standing Calf Raises", duration: 45, description: "Rise onto toes, pause, and lower slowly." },
+			{ name: "Wall Sit", duration: 45, description: "Back against wall, knees at 90°, hold the position." },
+
+			// Cool down (4 min)
+			{ name: "Standing Forward Fold (cool down)", duration: 60, description: "Stretch your back and hamstrings." },
+			{
+				name: "Figure Four Stretch (cool down)",
 				duration: 60,
-				description: "Step forward into a lunge position, alternating legs with each rep.",
+				description: "Sit or lie down, cross ankle over opposite knee, gently pull.",
 			},
-			{
-				name: "Plank to Push-Up",
-				duration: 60,
-				description:
-					"Start in a plank position, lower one arm at a time into a forearm plank, then push back up.",
-			},
-			{
-				name: "Rest",
-				duration: 30,
-				description: "Take a break or march in place.",
-			},
-			{
-				name: "Glute Bridges",
-				duration: 60,
-				description:
-					"Lie on your back with knees bent, lift your hips toward the ceiling, squeezing your glutes.",
-			},
-			{
-				name: "Superman",
-				duration: 60,
-				description: "Lie on your stomach and lift your arms and legs off the ground simultaneously.",
-			},
-			{
-				name: "Wall Sit",
-				duration: 60,
-				description: "Press your back against a wall, slide down into a squat position, and hold.",
-			},
-			{
-				name: "Rest",
-				duration: 30,
-				description: "Take a break or march in place.",
-			},
-			{
-				name: "Inchworms",
-				duration: 60,
-				description:
-					"Stand up, bend over, walk your hands out into a plank, do a push-up, then walk your hands back up.",
-			},
+			{ name: "Child's Pose (cool down)", duration: 60, description: "Relax and breathe deeply into the stretch." },
+			{ name: "Neck Rolls (cool down)", duration: 60, description: "Slow, controlled neck circles." },
 		],
 	},
 	{
 		id: 4,
-		name: "HIIT",
+		name: "Low Impact Burn",
 		steps: [
+			// Warm-up (3 min)
 			{
-				name: "Jumping Jacks",
-				duration: 30,
-				description: "Jump with your legs and arms moving in sync.",
-			},
-			{
-				name: "Squat Jumps",
-				duration: 30,
-				description: "Perform a squat and jump up explosively.",
-			},
-			{ name: "Rest", duration: 15, description: "Take a quick rest." },
-			{
-				name: "Mountain Climbers",
-				duration: 30,
-				description: "In a plank position, alternate bringing knees to chest.",
-			},
-			{
-				name: "Push-Ups",
-				duration: 30,
-				description: "Perform push-ups with good form.",
-			},
-			{ name: "Rest", duration: 15, description: "Take a quick rest." },
-			{
-				name: "Burpees",
-				duration: 30,
-				description: "Perform a full burpee with or without a push-up.",
-			},
-			{
-				name: "High Knees",
-				duration: 30,
-				description: "Run in place, bringing your knees up as high as possible.",
-			},
-			{ name: "Rest", duration: 15, description: "Take a quick rest." },
-			{
-				name: "Plank Hold",
+				name: "Side Steps (warm up)",
 				duration: 60,
-				description: "Finish strong by holding a plank, engaging your core.",
+				description: "Step side to side with slight bend in knees and swing arms.",
 			},
-		],
-	},
-	{
-		id: 5,
-		name: "Barbell Cardio Burn",
-		steps: [
+			{ name: "Torso Twists (warm up)", duration: 60, description: "Twist gently side to side with feet planted." },
+			{ name: "Heel Digs (warm up)", duration: 60, description: "Tap heels forward one at a time with arm curls." },
+
+			// Main (18 min)
+			{ name: "Step Back Lunges", duration: 60, description: "Step one foot back into a lunge, return, switch legs." },
 			{
-				name: "Barbell Squat to Press",
+				name: "Dumbbell Front Raise",
+				duration: 45,
+				description: "Raise dumbbells to shoulder height with straight arms.",
+			},
+			{
+				name: "March in Place with Dumbbells",
 				duration: 60,
-				description:
-					"Hold the barbell at your shoulders, squat down, and as you stand up, press the barbell overhead. Use 2.5 kg or 5 kg depending on your strength level.",
+				description: "Controlled high-knee march holding weights.",
 			},
+			{ name: "Bird Dog", duration: 60, description: "Balance and extend opposite limbs from tabletop position." },
+			{ name: "Rest", duration: 30, description: "Catch your breath." },
+			{ name: "Dead Bug", duration: 60, description: "Controlled core work lying on your back." },
+			{ name: "Side Leg Raises", duration: 45, description: "Lie on your side, raise top leg, hold briefly, lower." },
+			{ name: "Dumbbell Side Bends", duration: 60, description: "Bend sideways with dumbbell, return, switch sides." },
+			{ name: "Glute Bridge March", duration: 60, description: "In bridge position, lift one foot at a time." },
+			{ name: "Wall Push-ups", duration: 45, description: "Stand facing wall, push body away and back." },
+
+			// Cool down (4 min)
+			{ name: "Cat-Cow Stretch (cool down)", duration: 60, description: "Gentle spinal mobility." },
 			{
-				name: "Barbell Deadlift to Upright Row",
+				name: "Hamstring Stretch (cool down)",
 				duration: 60,
-				description:
-					"With the barbell on the floor, bend your knees and hinge at your hips to pick it up. Stand tall and pull the barbell to your chest. Lower and repeat. Use 2.5 kg or 5 kg.",
+				description: "Sit with one leg extended, reach for toes.",
 			},
 			{
-				name: "Rest",
-				duration: 30,
-				description: "Take a break or march in place to keep your heart rate up.",
-			},
-			{
-				name: "Barbell Clean and Press",
+				name: "Chest Opener (cool down)",
 				duration: 60,
-				description:
-					"From the floor, lift the barbell to your shoulders in one motion, then press overhead. Lower it back down and repeat. Use 2.5 kg or 5 kg.",
+				description: "Clasp hands behind your back, lift arms slightly.",
 			},
-			{
-				name: "Barbell Lunge with Bicep Curl",
-				duration: 60,
-				description:
-					"Step into a lunge position while curling the barbell towards your chest, then return to standing and lower the barbell. Alternate legs. Use 1 kg or 2.5 kg.",
-			},
-			{
-				name: "Rest",
-				duration: 30,
-				description: "Take a break or march in place.",
-			},
-			{
-				name: "Barbell Row to Tricep Extension",
-				duration: 60,
-				description:
-					"Bend at the waist and row the barbell to your chest, then straighten up and press the barbell overhead, extending your triceps. Use 1 kg or 2.5 kg.",
-			},
-			{
-				name: "Barbell High Knees",
-				duration: 60,
-				description: "Hold a light barbell (1 kg) at your chest and perform high knees as fast as possible.",
-			},
-			{
-				name: "Rest",
-				duration: 30,
-				description: "Take a break or march in place.",
-			},
-			{
-				name: "Barbell Russian Twists",
-				duration: 60,
-				description:
-					"Sit on the floor, holding the barbell horizontally with both hands. Twist your torso side to side, touching the barbell to the ground on each side. Use 1 kg or 2.5 kg.",
-			},
+			{ name: "Child's Pose (cool down)", duration: 60, description: "Relax and breathe to finish." },
 		],
 	},
 ];
